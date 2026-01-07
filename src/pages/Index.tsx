@@ -39,7 +39,7 @@ const Index = () => {
       external: false,
     },
     {
-      to: "https://cal.com",
+      to: "https://cal.com/divya-narasimhan/30min",
       number: "05",
       image: iconChat,
       label: "let's chat",
@@ -72,7 +72,7 @@ const Index = () => {
         </div>
 
         {/* Section Header */}
-        <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground mb-8 font-medium">
+        <p className="text-muted-foreground text-base mb-8">
           places where i think in public
         </p>
 
