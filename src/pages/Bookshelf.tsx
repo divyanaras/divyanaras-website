@@ -8,48 +8,116 @@ interface Book {
   title: string;
   author: string;
   review: string;
+  isHighlighted?: boolean;
 }
 
 const books: Book[] = [
   {
-    title: "Foundation",
+    title: "Molecule of More",
+    author: "Daniel Lieberman",
+    review: "neuroscience, a friendly layman read",
+    isHighlighted: true,
+  },
+  {
+    title: "Art of laziness",
+    author: "library mindset",
+    review: "quick skim, nothing new",
+  },
+  {
+    title: "Bastard of Istanbul",
+    author: "Elif Shafak",
+    review: "extremely rich in writing, a lil redundant with her other ones",
+  },
+  {
+    title: "Dune",
+    author: "Frank Herbert",
+    review: "classic, descriptive",
+  },
+  {
+    title: "A Little Life",
+    author: "Hanya Yanagihara",
+    review: "internet is right sometimes, worth the tears",
+    isHighlighted: true,
+  },
+  {
+    title: "Who Moved My Cheese",
+    author: "Spencer Johnson",
+    review: "shortest, most impactful entrepreneurial piece",
+  },
+  {
+    title: "Brave New World",
+    author: "Aldous Huxley",
+    review: "truly scary and inspiring, like 1984",
+    isHighlighted: true,
+  },
+  {
+    title: "Orbital",
+    author: "Samantha Harvey",
+    review: "takes you on a real life space orbital",
+    isHighlighted: true,
+  },
+  {
+    title: "On Earth Were Briefly Gorgeous",
+    author: "Ocean Vuong",
+    review: "emotional, poetic, a little too much",
+  },
+  {
+    title: "Good material",
+    author: "Dolly Alderton",
+    review: "funny, new age, great writing",
+  },
+  {
+    title: "White Nights",
+    author: "Dostoevsky",
+    review: "makes me rethink reading classics now",
+  },
+  {
+    title: "Three-Body Problem",
+    author: "Cixin Liu",
+    review: "sci-fi, THE BEST BOOK SERIES OF MY LIFE",
+    isHighlighted: true,
+  },
+  {
+    title: "The Dark Forest",
+    author: "Cixin Liu",
+    review: "novel concepts, the reason why this series is the greatest",
+    isHighlighted: true,
+  },
+  {
+    title: "Death's End",
+    author: "Cixin Liu",
+    review: "can be a bit of a drag, ends great no notes",
+    isHighlighted: true,
+  },
+  {
+    title: "Deep work",
+    author: "Cal Newport",
+    review: "how did i not read this earlier",
+  },
+  {
+    title: "The redemption of time",
+    author: "Baoshu",
+    review: "save yourselves from this misery",
+  },
+  {
+    title: "Calculating god",
+    author: "Robert J Sawyer",
+    review: "deals with a loaded question, introspect-able",
+  },
+  {
+    title: "The Elephant Vanishes",
+    author: "Murakami",
+    review: "loved 2 short stories, hated the rest",
+  },
+  {
+    title: "Never logged out",
+    author: "Ria Chopra",
+    review: "a nice lil rabbit hole",
+  },
+  {
+    title: "Foundation series",
     author: "Isaac Asimov",
-    review: "Epic in scope but the analogies feel dated now that sci-fi has evolved so much."
-  },
-  {
-    title: "Atomic Habits",
-    author: "James Clear",
-    review: "Simple frameworks that actually stick. Changed how I think about systems."
-  },
-  {
-    title: "The Mom Test",
-    author: "Rob Fitzpatrick",
-    review: "Should be mandatory reading for anyone building products. Brutally practical."
-  },
-  {
-    title: "Shoe Dog",
-    author: "Phil Knight",
-    review: "Raw and honest. Makes you want to run through walls for your ideas."
-  },
-  {
-    title: "Sapiens",
-    author: "Yuval Noah Harari",
-    review: "Reframes everything you thought you knew about being human."
-  },
-  {
-    title: "The Alchemist",
-    author: "Paulo Coelho",
-    review: "Overhyped but the journey metaphor hits different at certain life stages."
-  },
-  {
-    title: "Thinking, Fast and Slow",
-    author: "Daniel Kahneman",
-    review: "Dense but rewarding. Your brain will never feel the same."
-  },
-  {
-    title: "The Midnight Library",
-    author: "Matt Haig",
-    review: "A warm hug disguised as fiction. Read it when life feels heavy."
+    review: "decent sci-fi",
   },
 ];
 
@@ -71,39 +139,45 @@ const Bookshelf = () => {
 
         {/* Header */}
         <div className="mb-12">
-          <h1 className="text-sm uppercase tracking-[0.25em] text-muted-foreground mb-4 font-medium">
+          <h1 className="text-sm uppercase tracking-[0.25em] text-muted-foreground mb-6 font-medium">
             Bookshelf
           </h1>
-          <p className="text-muted-foreground text-base">
-            books that shaped how i think, work, and wander.
+          <p className="text-muted-foreground text-base leading-relaxed mb-4">
+            here's a set of books which moved me when i read them. the total sum of these content here, is the person i am today.
+          </p>
+          <p className="text-muted-foreground text-base leading-relaxed">
+            my loud opinions on them are supported as one-liners with the book, and the ones in <span className="text-book-highlight font-medium">red</span> are books that moved me extra.
           </p>
         </div>
 
         {/* Book List */}
-        <div className="space-y-4">
+        <div className="space-y-6">
           {books.map((book, index) => (
             <motion.div 
               key={book.title}
-              className="book-card p-5 bg-card/50 backdrop-blur-sm border border-border rounded-lg"
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.05 }}
-              whileHover={{ scale: 1.02, y: -2 }}
+              transition={{ delay: index * 0.03 }}
             >
-              <div className="flex items-start justify-between gap-4 mb-2">
-                <h3 className="text-foreground font-medium">{book.title}</h3>
-                <span className="text-xs text-muted-foreground shrink-0 font-medium">
-                  {String(index + 1).padStart(2, '0')}
+              <p className="text-base leading-relaxed">
+                <span className={`font-semibold ${book.isHighlighted ? 'text-book-highlight' : 'text-foreground'}`}>
+                  {book.title}
                 </span>
-              </div>
-              <p className="text-sm text-muted-foreground mb-3">{book.author}</p>
-              <p className="text-sm text-foreground/80 italic leading-relaxed">"{book.review}"</p>
+                {" "}
+                <span className="text-muted-foreground">
+                  by {book.author}
+                </span>
+                {" - "}
+                <span className="text-foreground/80">
+                  {book.review}
+                </span>
+              </p>
             </motion.div>
           ))}
         </div>
 
         {/* Footer note */}
-        <p className="mt-12 text-xs text-muted-foreground text-center font-medium">
+        <p className="mt-12 text-xs text-muted-foreground font-medium">
           always adding more. always rereading old favorites.
         </p>
       </main>
