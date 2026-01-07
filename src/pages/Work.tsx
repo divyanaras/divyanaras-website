@@ -43,8 +43,8 @@ const Work = () => {
   const thingsBuilt = [
     "GTM and PRDs for security products",
     "end-to-end content for launches",
-    "customer branding and community",
-    "customer story-telling",
+    "customer marketing and community",
+    "customer-centric story-telling",
   ];
 
   return (
@@ -82,7 +82,7 @@ const Work = () => {
         <div className="w-full border border-border rounded-lg p-6 mb-12 text-left">
           <h1 className="text-2xl font-semibold text-foreground mb-4">Work</h1>
           <p className="text-muted-foreground text-base leading-relaxed">
-            a collection of work I've put together over the years — from campaigns and feature pages to product launches and brand storytelling.
+            here's a collection of work I've put together over the years - from campaigns and feature pages to product launches and brand storytelling.
           </p>
         </div>
 
