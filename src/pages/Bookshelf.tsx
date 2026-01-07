@@ -61,25 +61,39 @@ const books: Book[] = [
 
 const Bookshelf = () => {
   return (
-    <div className="min-h-screen px-6 py-12 relative">
+    <div className="min-h-screen flex flex-col items-center px-6 py-12 relative">
       <GrainOverlay />
       <ThemeToggle />
-      
-      <main className="page-transition max-w-2xl mx-auto z-10 relative">
-        {/* Back link */}
-        <Link 
-          to="/" 
-          className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors mb-12 group"
+
+      {/* Top Navigation */}
+      <nav className="fixed top-6 left-6 z-20 flex flex-col gap-2">
+        <Link
+          to="/work"
+          className="text-sm text-muted-foreground hover:text-foreground transition-colors"
         >
-          <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
-          <span className="text-sm font-medium">back</span>
+          work
+        </Link>
+        <Link
+          to="/bookshelf"
+          className="text-sm text-foreground font-medium hover:opacity-70 transition-opacity"
+        >
+          bookshelf
+        </Link>
+      </nav>
+
+      <main className="page-transition max-w-lg w-full flex flex-col items-center text-center z-10 pt-16">
+        {/* Back Link */}
+        <Link
+          to="/"
+          className="self-start flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors mb-8"
+        >
+          <ArrowLeft size={16} />
+          <span className="text-sm">back</span>
         </Link>
 
         {/* Header */}
-        <div className="mb-12 border border-muted-foreground/30 p-6 rounded-sm">
-          <h1 className="text-sm uppercase tracking-[0.25em] text-muted-foreground mb-6 font-medium">
-            Bookshelf
-          </h1>
+        <div className="w-full border border-border rounded-lg p-6 mb-12 text-left">
+          <h1 className="text-2xl font-semibold text-foreground mb-4">Bookshelf</h1>
           <p className="text-muted-foreground text-base leading-relaxed mb-4">
             here's a set of books which moved me when i read them. the total sum of these content here, is the person i am today.
           </p>
@@ -89,27 +103,29 @@ const Bookshelf = () => {
         </div>
 
         {/* Book List */}
-        <div className="space-y-6">
-          {books.map((book, index) => (
-            <motion.div 
-              key={book.title}
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.03 }}
-            >
-              <p className="text-base leading-relaxed">
-                <span className={`font-semibold ${book.isFavorite ? 'text-red-700 dark:text-red-400' : 'text-foreground'}`}>
-                  {book.title}
-                </span>
-                <span className="text-muted-foreground"> by {book.author}</span>
-                <span className="text-muted-foreground"> - {book.review}</span>
-              </p>
-            </motion.div>
-          ))}
-        </div>
+        <section className="w-full text-left mb-12">
+          <div className="space-y-4">
+            {books.map((book, index) => (
+              <motion.div
+                key={book.title}
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: index * 0.03 }}
+              >
+                <p className="text-base leading-relaxed">
+                  <span className={`font-semibold ${book.isFavorite ? 'text-red-700 dark:text-red-400' : 'text-foreground'}`}>
+                    {book.title}
+                  </span>
+                  <span className="text-muted-foreground"> by {book.author}</span>
+                  <span className="text-muted-foreground"> - {book.review}</span>
+                </p>
+              </motion.div>
+            ))}
+          </div>
+        </section>
 
         {/* Footer note */}
-        <p className="mt-16 text-xs text-muted-foreground font-medium">
+        <p className="text-xs text-muted-foreground font-medium self-start">
           always adding more. always rereading old favorites.
         </p>
       </main>
