@@ -11,7 +11,7 @@ import iconChat from "@/assets/icon-chat.png";
 const Index = () => {
   const links = [
     {
-      to: "https://substack.com/@divyapshere",
+      to: "https://divyapshere.substack.com/archive",
       number: "01",
       image: iconSubstack,
       label: "substack",
@@ -42,7 +42,7 @@ const Index = () => {
       to: "https://cal.com/divya-narasimhan/30min",
       number: "05",
       image: iconChat,
-      label: "let's chat - over ramen, ideally",
+      label: "let's chat - over a ramen, ideally",
       external: true,
     },
   ];
@@ -61,15 +61,18 @@ const Index = () => {
         {/* Bio */}
         <div className="mb-14 space-y-4">
           <p className="text-foreground text-xl leading-relaxed font-medium">
-            hey, i'm Divya.
+            <span className="underline decoration-1 underline-offset-4">hey, i'm Divya.</span>
           </p>
           <p className="text-muted-foreground text-base leading-relaxed max-w-md">
             a product marketer, brand strategist and storyteller with a builder's mindset - 3+ years in security, endpoint and enterprise saas space.
           </p>
+          <p className="text-muted-foreground text-base leading-relaxed max-w-md">
+            between this, i dribble with design, reading, writing, making new things and chasing harder questions.
+          </p>
         </div>
 
         {/* Places text */}
-        <p className="text-muted-foreground text-base mb-8">
+        <p className="text-muted-foreground text-base mb-8 font-semibold">
           places where i think in public
         </p>
 
