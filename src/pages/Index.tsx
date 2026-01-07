@@ -46,16 +46,16 @@ const Index = () => {
       <ThemeToggle />
 
       {/* Top Navigation */}
-      <nav className="fixed top-6 left-6 z-20 flex flex-col gap-2">
+      <nav className="fixed top-6 left-6 z-20 flex flex-col gap-3">
         <Link
           to="/work"
-          className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+          className="text-base text-muted-foreground hover:text-foreground transition-colors"
         >
           work
         </Link>
         <Link
           to="/bookshelf"
-          className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+          className="text-base text-muted-foreground hover:text-foreground transition-colors"
         >
           bookshelf
         </Link>
