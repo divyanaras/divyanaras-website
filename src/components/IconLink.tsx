@@ -21,27 +21,32 @@ export function IconLink({ to, number, image, external = false, delay = 0 }: Ico
 
   const content = (
     <motion.div
-      className="link-item flex flex-col items-center gap-2 cursor-pointer"
+      className="link-item flex flex-col items-center gap-1.5 cursor-pointer"
       style={{ animationDelay: `${delay}ms` }}
       onHoverStart={() => setIsHovered(true)}
       onHoverEnd={() => setIsHovered(false)}
       onClick={handleClick}
       animate={{
-        scale: isClicked ? 0.9 : isHovered ? 1.1 : 1,
-        rotate: isHovered ? [0, -5, 5, -3, 3, 0] : 0,
-        y: isHovered ? -5 : 0,
+        scale: isClicked ? 0.9 : isHovered ? 1.08 : 1,
+        y: isHovered ? -4 : 0,
       }}
       transition={{
         type: "spring",
         stiffness: 400,
-        damping: 17,
-        rotate: { duration: 0.4 },
+        damping: 20,
       }}
     >
       <motion.div 
-        className="w-16 h-16 md:w-20 md:h-20 flex items-center justify-center overflow-hidden"
+        className="w-10 h-10 md:w-12 md:h-12 flex items-center justify-center overflow-hidden rounded-lg"
         animate={{
-          filter: isHovered ? "drop-shadow(0 8px 16px rgba(0,0,0,0.15))" : "drop-shadow(0 2px 4px rgba(0,0,0,0.05))",
+          filter: isHovered 
+            ? "drop-shadow(0 6px 12px rgba(0,0,0,0.2))" 
+            : "drop-shadow(0 2px 4px rgba(0,0,0,0.05))",
+          opacity: isHovered ? 1 : 0.85,
+        }}
+        whileHover={{
+          rotate: [0, -3, 3, 0],
+          transition: { duration: 0.3 }
         }}
       >
         <img 
@@ -52,10 +57,9 @@ export function IconLink({ to, number, image, external = false, delay = 0 }: Ico
         />
       </motion.div>
       <motion.span 
-        className="link-number text-xs text-muted-foreground"
+        className="link-number text-[10px] text-muted-foreground font-medium"
         animate={{
-          opacity: isHovered ? 1 : 0.7,
-          scale: isHovered ? 1.1 : 1,
+          opacity: isHovered ? 1 : 0.6,
         }}
       >
         {number}
