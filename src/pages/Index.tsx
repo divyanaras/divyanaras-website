@@ -52,27 +52,32 @@ const Index = () => {
       <GrainOverlay />
       <ThemeToggle />
       
-      <main className="page-transition max-w-lg w-full flex flex-col items-center text-center z-10">
-        {/* Name */}
-        <h1 className="text-sm uppercase tracking-[0.25em] text-muted-foreground mb-10 font-medium">
+      <main className="page-transition max-w-xl w-full flex flex-col items-center text-center z-10">
+        {/* Name - Strong identity */}
+        <h1 className="text-xs uppercase tracking-[0.3em] text-muted-foreground mb-12 font-medium opacity-70">
           Divya Narasimhan
         </h1>
         
-        {/* Bio */}
-        <div className="mb-14 space-y-4">
-          <p className="text-foreground text-xl leading-relaxed font-medium">
-            hey, i'm Divya
+        {/* Bio - Clear hierarchy */}
+        <div className="mb-16 space-y-5">
+          <p className="text-foreground text-2xl md:text-3xl leading-relaxed font-semibold">
+            hey i'm divya.
+          </p>
+          <p className="text-foreground/90 text-base md:text-lg leading-relaxed max-w-md">
+            a product marketer, brand strategist and storyteller with a builder's mindset— with 3+ years operating inside a global SaaS org.
           </p>
           <p className="text-muted-foreground text-base leading-relaxed max-w-md">
-            a product marketer, brand strategist and storyteller with a builder's mindset
-          </p>
-          <p className="text-muted-foreground text-base leading-relaxed max-w-md">
-            between this, i dribble with design, reading, writing, making new things and chasing harder questions
+            between this, i dribble with design, reading, writing, making new things and chasing harder questions.
           </p>
         </div>
 
+        {/* Section Header */}
+        <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground mb-8 font-medium">
+          places where i think in public
+        </p>
+
         {/* Icon Links Grid */}
-        <div className="grid grid-cols-5 gap-3 md:gap-6 mb-10">
+        <div className="grid grid-cols-5 gap-4 md:gap-8 mb-10">
           {links.map((link, index) => (
             <IconLink
               key={link.number}
@@ -80,13 +85,13 @@ const Index = () => {
               number={link.number}
               image={link.image}
               external={link.external}
-              delay={index * 80}
+              delay={index * 100}
             />
           ))}
         </div>
 
         {/* Legend */}
-        <div className="text-xs text-muted-foreground space-y-1.5 font-medium tracking-wide">
+        <div className="text-xs text-muted-foreground/70 space-y-1.5 font-medium tracking-wide">
           <p>(01) substack · (02) x · (03) linkedin</p>
           <p>(04) bookshelf · (05) let's chat</p>
         </div>
