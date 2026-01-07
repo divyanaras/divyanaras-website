@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { GrainOverlay } from "@/components/GrainOverlay";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import { ArrowLeft } from "lucide-react";
+import { motion } from "framer-motion";
 
 interface Book {
   title: string;
@@ -65,12 +66,12 @@ const Bookshelf = () => {
           className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors mb-12 group"
         >
           <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
-          <span className="font-mono text-sm">back</span>
+          <span className="text-sm font-medium">back</span>
         </Link>
 
         {/* Header */}
         <div className="mb-12">
-          <h1 className="font-mono text-sm uppercase tracking-[0.3em] text-muted-foreground mb-4">
+          <h1 className="text-sm uppercase tracking-[0.25em] text-muted-foreground mb-4 font-medium">
             Bookshelf
           </h1>
           <p className="text-muted-foreground text-base">
@@ -79,27 +80,30 @@ const Bookshelf = () => {
         </div>
 
         {/* Book List */}
-        <div className="space-y-6">
+        <div className="space-y-4">
           {books.map((book, index) => (
-            <div 
+            <motion.div 
               key={book.title}
-              className="book-card p-6 bg-card/50 backdrop-blur-sm border border-border rounded-lg"
-              style={{ animationDelay: `${index * 50}ms` }}
+              className="book-card p-5 bg-card/50 backdrop-blur-sm border border-border rounded-lg"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: index * 0.05 }}
+              whileHover={{ scale: 1.02, y: -2 }}
             >
               <div className="flex items-start justify-between gap-4 mb-2">
                 <h3 className="text-foreground font-medium">{book.title}</h3>
-                <span className="font-mono text-xs text-muted-foreground shrink-0">
+                <span className="text-xs text-muted-foreground shrink-0 font-medium">
                   {String(index + 1).padStart(2, '0')}
                 </span>
               </div>
               <p className="text-sm text-muted-foreground mb-3">{book.author}</p>
               <p className="text-sm text-foreground/80 italic leading-relaxed">"{book.review}"</p>
-            </div>
+            </motion.div>
           ))}
         </div>
 
         {/* Footer note */}
-        <p className="mt-12 font-mono text-xs text-muted-foreground text-center">
+        <p className="mt-12 text-xs text-muted-foreground text-center font-medium">
           always adding more. always rereading old favorites.
         </p>
       </main>
