@@ -60,9 +60,9 @@ const Index = () => {
         
         {/* Bio */}
         <div className="mb-14 space-y-4">
-          <p className="text-foreground text-xl leading-relaxed font-medium">
-            <span className="underline decoration-1 underline-offset-4">hey, i'm Divya.</span>
-          </p>
+        <p className="text-foreground text-xl leading-relaxed font-medium">
+          hey, i'm Divya.
+        </p>
           <p className="text-muted-foreground text-base leading-relaxed max-w-md">
             a product marketer, brand strategist and storyteller with a builder's mindset - 3+ years in security, endpoint and enterprise saas space.
           </p>
