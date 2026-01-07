@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { GrainOverlay } from "@/components/GrainOverlay";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import { IconLink } from "@/components/IconLink";
@@ -5,7 +6,6 @@ import { IconLink } from "@/components/IconLink";
 import iconSubstack from "@/assets/icon-substack.png";
 import iconX from "@/assets/icon-x.png";
 import iconLinkedin from "@/assets/icon-linkedin.png";
-import iconBookshelf from "@/assets/icon-bookshelf.png";
 import iconChat from "@/assets/icon-chat.png";
 
 const Index = () => {
@@ -32,15 +32,8 @@ const Index = () => {
       external: true,
     },
     {
-      to: "/bookshelf",
-      number: "04",
-      image: iconBookshelf,
-      label: "bookshelf",
-      external: false,
-    },
-    {
       to: "https://cal.com/divya-narasimhan/30min",
-      number: "05",
+      number: "04",
       image: iconChat,
       label: "let's chat - over a ramen, ideally",
       external: true,
@@ -51,6 +44,22 @@ const Index = () => {
     <div className="min-h-screen flex flex-col items-center justify-center px-6 py-12 relative">
       <GrainOverlay />
       <ThemeToggle />
+
+      {/* Top Navigation */}
+      <nav className="fixed top-6 left-6 z-20 flex flex-col gap-2">
+        <Link
+          to="/work"
+          className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+        >
+          work
+        </Link>
+        <Link
+          to="/bookshelf"
+          className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+        >
+          bookshelf
+        </Link>
+      </nav>
       
       <main className="page-transition max-w-lg w-full flex flex-col items-center text-center z-10">
         {/* Name */}
@@ -61,7 +70,7 @@ const Index = () => {
         {/* Bio */}
         <div className="mb-14 space-y-4">
         <p className="text-foreground text-xl leading-relaxed font-medium">
-          hey, i'm Divya.
+          hey, i'm divya.
         </p>
           <p className="text-muted-foreground text-base leading-relaxed max-w-md">
             a product marketer, brand strategist and storyteller with a builder's mindset - 3+ years in security, endpoint and enterprise saas space.
@@ -77,7 +86,7 @@ const Index = () => {
         </p>
 
         {/* Icon Links Grid */}
-        <div className="grid grid-cols-5 gap-3 md:gap-6 mb-10">
+        <div className="grid grid-cols-4 gap-3 md:gap-6 mb-10">
           {links.map((link, index) => (
             <IconLink
               key={link.number}
@@ -93,7 +102,7 @@ const Index = () => {
         {/* Legend */}
         <div className="text-xs text-muted-foreground space-y-1.5 font-medium tracking-wide">
           <p>(01) substack · (02) x · (03) linkedin</p>
-          <p>(04) bookshelf · (05) let's chat</p>
+          <p>(04) let's chat - over ramen, ideally</p>
         </div>
       </main>
     </div>

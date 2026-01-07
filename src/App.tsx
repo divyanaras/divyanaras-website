@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ThemeProvider } from "next-themes";
 import Index from "./pages/Index";
 import Bookshelf from "./pages/Bookshelf";
+import Work from "./pages/Work";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -20,6 +21,7 @@ const App = () => (
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/bookshelf" element={<Bookshelf />} />
+            <Route path="/work" element={<Work />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>
