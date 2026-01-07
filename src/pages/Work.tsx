@@ -75,7 +75,7 @@ const Work = () => {
           className="self-start flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors mb-8"
         >
           <ArrowLeft size={16} />
-          <span className="text-sm">back</span>
+          <span className="text-sm">home</span>
         </Link>
 
         {/* Header */}
