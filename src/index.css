@@ -6,7 +6,6 @@
 
 @layer base {
   :root {
-    --book-highlight: 0 65% 45%;
     --background: 45 30% 96%;
     --foreground: 30 10% 15%;
     --card: 45 25% 94%;
@@ -38,7 +37,6 @@
   }
 
   .dark {
-    --book-highlight: 0 60% 55%;
     --background: 25 15% 10%;
     --foreground: 40 20% 92%;
     --card: 25 15% 14%;
