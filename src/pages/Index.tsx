@@ -39,10 +39,10 @@ const Index = () => {
       external: false,
     },
     {
-      to: "https://cal.com",
+      to: "https://cal.com/divya-narasimhan/30min",
       number: "05",
       image: iconChat,
-      label: "let's chat",
+      label: "let's chat - over ramen, ideally",
       external: true,
     },
   ];
@@ -61,15 +61,17 @@ const Index = () => {
         {/* Bio */}
         <div className="mb-14 space-y-4">
           <p className="text-foreground text-xl leading-relaxed font-medium">
-            hey, i'm Divya
+            hey, i'm Divya.
           </p>
           <p className="text-muted-foreground text-base leading-relaxed max-w-md">
-            a product marketer, brand strategist and storyteller with a builder's mindset
-          </p>
-          <p className="text-muted-foreground text-base leading-relaxed max-w-md">
-            between this, i dribble with design, reading, writing, making new things and chasing harder questions
+            a product marketer, brand strategist and storyteller with a builder's mindset - 3+ years in security, endpoint and enterprise saas space.
           </p>
         </div>
+
+        {/* Places text */}
+        <p className="text-muted-foreground text-base mb-8">
+          places where i think in public
+        </p>
 
         {/* Icon Links Grid */}
         <div className="grid grid-cols-5 gap-3 md:gap-6 mb-10">
