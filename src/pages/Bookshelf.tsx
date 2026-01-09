@@ -66,22 +66,24 @@ const Bookshelf = () => {
       <ThemeToggle />
 
       {/* Top Navigation */}
-      <nav className="fixed top-6 left-6 z-20 flex flex-col gap-2">
-        <Link
-          to="/work"
-          className="text-sm text-muted-foreground hover:text-foreground transition-colors"
-        >
-          work
-        </Link>
-        <Link
-          to="/bookshelf"
-          className="text-sm text-foreground font-medium hover:opacity-70 transition-opacity"
-        >
-          bookshelf
-        </Link>
+      <nav className="fixed top-0 left-0 right-0 z-20 px-6 py-4 bg-background/80 backdrop-blur-sm md:bg-transparent md:backdrop-blur-none md:right-auto">
+        <div className="flex flex-col gap-2">
+          <Link
+            to="/work"
+            className="text-lg font-medium text-foreground/80 hover:text-foreground transition-colors"
+          >
+            work
+          </Link>
+          <Link
+            to="/bookshelf"
+            className="text-lg font-medium text-foreground/80 hover:text-foreground transition-colors"
+          >
+            bookshelf
+          </Link>
+        </div>
       </nav>
 
-      <main className="page-transition max-w-lg w-full flex flex-col items-center text-center z-10 pt-16">
+      <main className="page-transition max-w-lg w-full flex flex-col items-center text-center z-10 pt-24 md:pt-16">
         {/* Back Link */}
         <Link
           to="/"
