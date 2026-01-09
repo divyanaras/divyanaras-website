@@ -49,19 +49,19 @@ const Index = () => {
       <nav className="fixed top-6 left-6 z-20 flex flex-col gap-3">
         <Link
           to="/work"
-          className="text-base text-muted-foreground hover:text-foreground transition-colors"
+          className="text-lg font-medium text-foreground/80 hover:text-foreground transition-colors"
         >
           work
         </Link>
         <Link
           to="/bookshelf"
-          className="text-base text-muted-foreground hover:text-foreground transition-colors"
+          className="text-lg font-medium text-foreground/80 hover:text-foreground transition-colors"
         >
           bookshelf
         </Link>
       </nav>
       
-      <main className="page-transition max-w-lg w-full flex flex-col items-center text-center z-10">
+      <main className="page-transition max-w-lg w-full flex flex-col items-center text-center z-10 pt-20 md:pt-0">
         {/* Name */}
         <h1 className="text-sm uppercase tracking-[0.25em] text-muted-foreground mb-10 font-medium">
           Divya Narasimhan
