@@ -1,73 +1,44 @@
-# Welcome to your Lovable project
+# divyanaras.com
 
-## Project info
+My personal website — built with React, Vite, and Tailwind CSS. Hosted on GitHub Pages at [divyanaras.com](https://divyanaras.com).
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+## What's on the site
+- **Home** — short bio and links to Substack, X, LinkedIn, and cal.com
+- **Bookshelf** — books I've read with one-liner reviews. Favorites highlighted in red.
+- **Work** — my work and projects
 
-## How can I edit this code?
+## How to add a book
+1. Go to `src/data/books.ts` on GitHub
+2. Click the pencil ✏️ icon to edit
+3. Add a new line in this format:
+```
+{ title: "Book Title", author: "Author Name", review: "your one-liner" },
+```
+Add `isFavorite: true` before the `}` to highlight it in red.
 
-There are several ways of editing your application.
+4. Click **"Commit changes"** — site updates in ~2 minutes.
 
-**Use Lovable**
+## How to run locally
+Make sure Node.js is installed, then open Terminal and run:
+```bash
+cd ~/Desktop/claude-projects/divyanaras-website
+source ~/.nvm/nvm.sh && npm run dev
+```
+Open [http://localhost:5173](http://localhost:5173) in your browser.
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
-
-Changes made via Lovable will be committed automatically to this repo.
-
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+## How to push changes to GitHub
+After making changes locally:
+```bash
+git add .
+git commit -m "describe what you changed"
+git push
 ```
 
-**Edit a file directly in GitHub**
+## Tech stack
+- **React** — JavaScript framework
+- **Vite** — builds and runs the project locally
+- **Tailwind CSS** — styling
+- **next-themes** — light/dark mode toggle
+- **framer-motion** — animations
+- **GitHub Pages** — hosting
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
-
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
