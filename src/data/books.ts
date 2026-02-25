@@ -12,7 +12,7 @@ export interface Book {
 // Set isFavorite: true to highlight it in red.
 // ─────────────────────────────────────────────
 
-export const books: Book[] = [
+const staticBooks: Book[] = [
   { title: "Molecule of More", author: "Daniel Lieberman", review: "neuroscience, a friendly layman read", isFavorite: true },
   { title: "Art of Laziness", author: "Library Mindset", review: "quick skim, nothing new" },
   { title: "Bastard of Istanbul", author: "Elif Shafak", review: "extremely rich in writing, a little redundant with her other ones" },
@@ -59,3 +59,9 @@ export const books: Book[] = [
   { title: "Angels and Demons", author: "Dan Brown", review: "talking about it would make me wanna re-read" },
   { title: "The Girl on the Train", author: "Paula Hawkins", review: "fun, slow read" },
 ];
+
+export function getBooks(): Book[] {
+  return staticBooks;
+}
+
+export const books = staticBooks;

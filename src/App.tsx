@@ -8,6 +8,8 @@ import Index from "./pages/Index";
 import Bookshelf from "./pages/Bookshelf";
 import Work from "./pages/Work";
 import NotFound from "./pages/NotFound";
+import BookMap from "./pages/BookMap";
+import BookDetailPage from "./components/bookmap/BookDetail";
 
 const queryClient = new QueryClient();
 
@@ -22,6 +24,8 @@ const App = () => (
             <Route path="/" element={<Index />} />
             <Route path="/bookshelf" element={<Bookshelf />} />
             <Route path="/work" element={<Work />} />
+            <Route path="/bookmap" element={<BookMap />} />
+            <Route path="/bookmap/book/:bookId" element={<BookDetailPage />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>

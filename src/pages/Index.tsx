@@ -52,13 +52,19 @@ const Index = () => {
             to="/work"
             className="text-lg font-medium text-foreground/80 hover:text-foreground transition-colors"
           >
-            work
+            Work
           </Link>
           <Link
             to="/bookshelf"
             className="text-lg font-medium text-foreground/80 hover:text-foreground transition-colors"
           >
-            bookshelf
+            Bookshelf
+          </Link>
+          <Link
+            to="/bookmap"
+            className="text-lg font-medium text-foreground/80 hover:text-foreground transition-colors"
+          >
+            Bookmap
           </Link>
         </div>
       </nav>
@@ -72,19 +78,19 @@ const Index = () => {
         {/* Bio */}
         <div className="mb-14 space-y-4">
         <p className="text-foreground text-xl leading-relaxed font-medium">
-          hey, i'm divya.
+          Hey, I'm Divya.
         </p>
           <p className="text-muted-foreground text-base leading-relaxed max-w-md">
-            a product marketer, brand strategist and storyteller with a builder's mindset - 3+ years in security, endpoint and enterprise saas space.
+            A product marketer, brand strategist and storyteller with a builder's mindset. I have 3+ years in security, endpoint and enterprise saas space.
           </p>
           <p className="text-muted-foreground text-base leading-relaxed max-w-md">
-            between this, i dribble with design, reading, writing, making new things and chasing harder questions.
+            Between this, I dribble with design, reading, writing, making new things and chasing harder questions.
           </p>
         </div>
 
         {/* Places text */}
         <p className="text-muted-foreground text-base mb-8 font-semibold">
-          places where i think in public
+          Places where I think in public
         </p>
 
         {/* Icon Links Grid */}

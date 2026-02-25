@@ -43,8 +43,7 @@ const Work = () => {
   const thingsBuilt = [
     "GTM and PRDs for security products",
     "end-to-end content for launches",
-    "customer marketing and community",
-    "customer-centric story-telling",
+    "Customer-centric marketing and storytelling",
   ];
 
   return (
@@ -59,13 +58,19 @@ const Work = () => {
             to="/work"
             className="text-lg font-medium text-foreground/80 hover:text-foreground transition-colors"
           >
-            work
+            Work
           </Link>
           <Link
             to="/bookshelf"
             className="text-lg font-medium text-foreground/80 hover:text-foreground transition-colors"
           >
-            bookshelf
+            Bookshelf
+          </Link>
+          <Link
+            to="/bookmap"
+            className="text-lg font-medium text-foreground/80 hover:text-foreground transition-colors"
+          >
+            Bookmap
           </Link>
         </div>
       </nav>
@@ -77,20 +82,20 @@ const Work = () => {
           className="self-start flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors mb-8"
         >
           <ArrowLeft size={16} />
-          <span className="text-sm">home</span>
+          <span className="text-sm">Home</span>
         </Link>
 
         {/* Header */}
         <div className="w-full border border-border rounded-lg p-6 mb-12 text-left">
           <h1 className="text-2xl font-semibold text-foreground mb-4">Work</h1>
           <p className="text-muted-foreground text-base leading-relaxed">
-            here's a collection of work I've put together over the years - from campaigns and feature pages to product launches and brand storytelling.
+            Here's a collection of work I've put together over the years - from campaigns and feature pages to product launches and brand storytelling.
           </p>
         </div>
 
         {/* Selected Work Section */}
         <section className="w-full text-left mb-12">
-          <h2 className="text-lg font-semibold text-foreground mb-6">selected work</h2>
+          <h2 className="text-lg font-semibold text-foreground mb-6">Selected work</h2>
           <div className="space-y-4">
             {selectedWork.map((item, index) => (
               <motion.div
@@ -114,7 +119,7 @@ const Work = () => {
 
         {/* Things I've Helped Build Section */}
         <section className="w-full text-left mb-12">
-          <h2 className="text-lg font-semibold text-foreground mb-6">things I've helped build</h2>
+          <h2 className="text-lg font-semibold text-foreground mb-6">Things I've helped build</h2>
           <div className="space-y-3">
             {thingsBuilt.map((item, index) => (
               <motion.p

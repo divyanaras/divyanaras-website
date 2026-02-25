@@ -3,9 +3,11 @@ import { GrainOverlay } from "@/components/GrainOverlay";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import { ArrowLeft } from "lucide-react";
 import { motion } from "framer-motion";
-import { books } from "@/data/books";
+import { getBooks } from "@/data/books";
 
 const Bookshelf = () => {
+  const books = getBooks();
+
   return (
     <div className="min-h-screen flex flex-col items-center px-6 py-12 relative">
       <GrainOverlay />
@@ -18,13 +20,19 @@ const Bookshelf = () => {
             to="/work"
             className="text-lg font-medium text-foreground/80 hover:text-foreground transition-colors"
           >
-            work
+            Work
           </Link>
           <Link
             to="/bookshelf"
             className="text-lg font-medium text-foreground/80 hover:text-foreground transition-colors"
           >
-            bookshelf
+            Bookshelf
+          </Link>
+          <Link
+            to="/bookmap"
+            className="text-lg font-medium text-foreground/80 hover:text-foreground transition-colors"
+          >
+            Bookmap
           </Link>
         </div>
       </nav>
@@ -36,17 +44,17 @@ const Bookshelf = () => {
           className="self-start flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors mb-8"
         >
           <ArrowLeft size={16} />
-          <span className="text-sm">home</span>
+          <span className="text-sm">Home</span>
         </Link>
 
         {/* Header */}
         <div className="w-full border border-border rounded-lg p-6 mb-12 text-left">
           <h1 className="text-2xl font-semibold text-foreground mb-4">Bookshelf</h1>
           <p className="text-muted-foreground text-base leading-relaxed mb-4">
-            here's a set of books which moved me when i read them. the total sum of these content here, is the person i am today.
+            Here's a set of books which moved me when I read them. The total sum of these content here, is the person I am today.
           </p>
           <p className="text-muted-foreground text-base leading-relaxed">
-            my loud opinions on them are supported as one-liners with the book, and the ones in <span className="text-red-700 dark:text-red-400">red</span> are books that moved me extra.
+            My opinions on them are supported as one-liners with the book, and the ones in <span className="text-red-700 dark:text-red-400">red</span> are books that moved me extra.
           </p>
         </div>
 
@@ -74,7 +82,7 @@ const Bookshelf = () => {
 
         {/* Footer note */}
         <p className="text-xs text-muted-foreground font-medium self-start">
-          always adding more. always rereading old favorites.
+          Always adding more. Always rereading old favorites.
         </p>
       </main>
     </div>
