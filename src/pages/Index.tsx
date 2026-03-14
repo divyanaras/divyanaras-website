@@ -60,12 +60,6 @@ const Index = () => {
           >
             Bookshelf
           </Link>
-          <Link
-            to="/bookmap"
-            className="text-lg font-medium text-foreground/80 hover:text-foreground transition-colors"
-          >
-            Bookmap
-          </Link>
         </div>
       </nav>
       
