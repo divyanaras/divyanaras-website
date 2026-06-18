@@ -1,109 +1,43 @@
-import { Link } from "react-router-dom";
 import { GrainOverlay } from "@/components/GrainOverlay";
-import { ThemeToggle } from "@/components/ThemeToggle";
+import { SideNav } from "@/components/SideNav";
 import { motion } from "framer-motion";
-import { ArrowLeft } from "lucide-react";
 
-const Work = () => {
-  const selectedWork = [
-    {
-      title: "ebook campaigns",
-      url: "https://www.manageengine.com/log-management/dark-side-of-ai-in-cybersecurity.html",
-    },
-    {
-      title: "complex feature pages",
-      url: "https://www.manageengine.com/log-management/sem/security-and-risk-posture-management-for-ad-and-mssql.html",
-    },
-    {
-      title: "PM and new product websites",
-      url: "https://www.manageengine.com/siem-mssp/",
-    },
-    {
-      title: "SEO-driven feature pages",
-      url: "https://www.manageengine.com/log-management/cyber-security/initial-access.html",
-    },
-    {
-      title: "compliance explainer pages",
-      url: "https://www.manageengine.com/products/eventlog/south-africa-popia-personal-information-act.html",
-    },
-    {
-      title: "campaign landing pages",
-      url: "https://www.manageengine.com/log-management/upgrade-log360.html",
-    },
-    {
-      title: "brand-level AI videos",
-      url: "https://www.linkedin.com/feed/update/urn:li:activity:7351098280228900864/",
-    },
-    {
-      title: "social campaigns",
-      url: "https://www.manageengine.com/cybersecurity-awareness-month/",
-    },
-  ];
+const selectedWork = [
+  { title: "ebook campaigns",            url: "https://www.manageengine.com/log-management/dark-side-of-ai-in-cybersecurity.html" },
+  { title: "complex feature pages",      url: "https://www.manageengine.com/log-management/sem/security-and-risk-posture-management-for-ad-and-mssql.html" },
+  { title: "PM and new product websites",url: "https://www.manageengine.com/siem-mssp/" },
+  { title: "SEO-driven feature pages",   url: "https://www.manageengine.com/log-management/cyber-security/initial-access.html" },
+  { title: "compliance explainer pages", url: "https://www.manageengine.com/products/eventlog/south-africa-popia-personal-information-act.html" },
+  { title: "campaign landing pages",     url: "https://www.manageengine.com/log-management/upgrade-log360.html" },
+  { title: "brand-level AI videos",      url: "https://www.linkedin.com/feed/update/urn:li:activity:7351098280228900864/" },
+  { title: "social campaigns",           url: "https://www.manageengine.com/cybersecurity-awareness-month/" },
+];
 
-  const thingsBuilt = [
-    "GTM and PRDs for security products",
-    "end-to-end content for launches",
-    "Customer-centric marketing and storytelling",
-  ];
+const thingsBuilt = [
+  "GTM and PRDs for security products",
+  "end-to-end content for launches",
+  "customer-centric marketing and storytelling",
+];
 
-  return (
-    <div className="min-h-screen flex flex-col items-center px-6 py-12 relative">
-      <GrainOverlay />
-      <ThemeToggle />
+const Work = () => (
+  <div className="h-screen overflow-hidden relative">
+    <GrainOverlay />
+    <SideNav />
 
-      {/* Top Navigation */}
-      <nav className="fixed top-0 left-0 right-0 z-20 px-6 py-4 bg-background/80 backdrop-blur-sm md:bg-transparent md:backdrop-blur-none md:right-auto">
-        <div className="flex flex-col gap-2">
-          <Link
-            to="/work"
-            className="text-lg font-medium text-foreground/80 hover:text-foreground transition-colors"
-          >
-            Work
-          </Link>
-          <Link
-            to="/bookshelf"
-            className="text-lg font-medium text-foreground/80 hover:text-foreground transition-colors"
-          >
-            Bookshelf
-          </Link>
-        </div>
-      </nav>
+    <div className="ml-40 h-full flex flex-col px-10 py-10 overflow-y-auto">
+      <div className="max-w-xl page-transition">
+        <h1 className="text-2xl font-semibold text-foreground mb-6">work</h1>
+        <p className="text-sm text-muted-foreground leading-relaxed mb-10">
+          campaigns, feature pages, product launches and brand storytelling from 3.5 years in enterprise security.
+        </p>
 
-      <main className="page-transition max-w-lg w-full flex flex-col items-center text-center z-10 pt-24 md:pt-16">
-        {/* Back Link */}
-        <Link
-          to="/"
-          className="self-start flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors mb-8"
-        >
-          <ArrowLeft size={16} />
-          <span className="text-sm">Home</span>
-        </Link>
-
-        {/* Header */}
-        <div className="w-full border border-border rounded-lg p-6 mb-12 text-left">
-          <h1 className="text-2xl font-semibold text-foreground mb-4">Work</h1>
-          <p className="text-muted-foreground text-base leading-relaxed">
-            Here's a collection of work I've put together over the years - from campaigns and feature pages to product launches and brand storytelling.
-          </p>
-        </div>
-
-        {/* Selected Work Section */}
-        <section className="w-full text-left mb-12">
-          <h2 className="text-lg font-semibold text-foreground mb-6">Selected work</h2>
-          <div className="space-y-4">
-            {selectedWork.map((item, index) => (
-              <motion.div
-                key={item.title}
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.05 }}
-              >
-                <a
-                  href={item.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-foreground hover:text-primary transition-colors underline decoration-1 underline-offset-4"
-                >
+        <section className="mb-10">
+          <h2 className="text-xs uppercase tracking-widest text-muted-foreground mb-4">selected work</h2>
+          <div className="space-y-3">
+            {selectedWork.map((item, i) => (
+              <motion.div key={item.title} initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: i * 0.04 }}>
+                <a href={item.url} target="_blank" rel="noopener noreferrer"
+                  className="text-sm text-foreground hover:text-primary transition-colors underline decoration-1 underline-offset-4">
                   {item.title}
                 </a>
               </motion.div>
@@ -111,26 +45,20 @@ const Work = () => {
           </div>
         </section>
 
-        {/* Things I've Helped Build Section */}
-        <section className="w-full text-left mb-12">
-          <h2 className="text-lg font-semibold text-foreground mb-6">Things I've helped build</h2>
-          <div className="space-y-3">
-            {thingsBuilt.map((item, index) => (
-              <motion.p
-                key={item}
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.05 + 0.4 }}
-                className="text-muted-foreground text-base"
-              >
+        <section>
+          <h2 className="text-xs uppercase tracking-widest text-muted-foreground mb-4">things i've helped build</h2>
+          <div className="space-y-2">
+            {thingsBuilt.map((item, i) => (
+              <motion.p key={item} initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: i * 0.04 + 0.35 }}
+                className="text-sm text-muted-foreground">
                 {item}
               </motion.p>
             ))}
           </div>
         </section>
-      </main>
+      </div>
     </div>
-  );
-};
+  </div>
+);
 
 export default Work;

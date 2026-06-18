@@ -2,66 +2,50 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: 'Monaco';
+  src: url('/Monaco.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Chalkduster';
+  src: url('/Chalkduster.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Brand palette — Paper-based, beige-led, no gradients, no shadows. */
 @layer base {
   :root {
-    --background: 45 30% 96%;
-    --foreground: 30 10% 15%;
-    --card: 45 25% 94%;
-    --card-foreground: 30 10% 15%;
-    --popover: 45 25% 94%;
-    --popover-foreground: 30 10% 15%;
-    --primary: 25 85% 55%;
-    --primary-foreground: 45 30% 98%;
-    --secondary: 340 45% 65%;
-    --secondary-foreground: 30 10% 15%;
-    --muted: 30 15% 75%;
-    --muted-foreground: 30 10% 40%;
-    --accent: 165 40% 50%;
-    --accent-foreground: 30 10% 15%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 60 9.1% 97.8%;
-    --border: 30 20% 85%;
-    --input: 30 20% 85%;
-    --ring: 25 85% 55%;
+    /* Paper */
+    --background: 42 49% 92%;
+    --foreground: 32 14% 15%;
+    /* Beige (sections, modal surface) */
+    --card: 42 47% 87%;
+    --card-foreground: 32 14% 15%;
+    --popover: 42 47% 87%;
+    --popover-foreground: 32 14% 15%;
+    /* Accent (links, section labels) */
+    --primary: 30 35% 35%;
+    --primary-foreground: 42 49% 92%;
+    /* Beige variant used for secondary surfaces */
+    --secondary: 42 47% 87%;
+    --secondary-foreground: 32 14% 15%;
+    /* Muted text */
+    --muted: 40 34% 76%;
+    --muted-foreground: 33 11% 49%;
+    /* Accent matches primary in this system */
+    --accent: 30 35% 35%;
+    --accent-foreground: 42 49% 92%;
+    --destructive: 0 60% 40%;
+    --destructive-foreground: 42 49% 92%;
+    /* Rule */
+    --border: 40 34% 76%;
+    --input: 40 34% 76%;
+    --ring: 30 35% 35%;
     --radius: 0.5rem;
-    --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: 240 5.9% 10%;
-    --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 240 4.8% 95.9%;
-    --sidebar-accent-foreground: 240 5.9% 10%;
-    --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
-  }
-
-  .dark {
-    --background: 25 15% 10%;
-    --foreground: 40 20% 92%;
-    --card: 25 15% 14%;
-    --card-foreground: 40 20% 92%;
-    --popover: 25 15% 14%;
-    --popover-foreground: 40 20% 92%;
-    --primary: 25 85% 60%;
-    --primary-foreground: 25 15% 10%;
-    --secondary: 340 45% 55%;
-    --secondary-foreground: 40 20% 92%;
-    --muted: 25 12% 25%;
-    --muted-foreground: 30 15% 60%;
-    --accent: 165 40% 45%;
-    --accent-foreground: 40 20% 92%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 60 9.1% 97.8%;
-    --border: 25 12% 22%;
-    --input: 25 12% 22%;
-    --ring: 25 85% 60%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
   }
 }
 
@@ -70,24 +54,14 @@
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground font-system antialiased;
+    @apply bg-background text-foreground font-sans antialiased;
+    letter-spacing: -0.03em;
+    background-color: #F5EFE0;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3CfeBlend in='SourceGraphic' mode='multiply'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23noise)' opacity='0.06'/%3E%3C/svg%3E");
   }
 }
 
-/* Subtle grain overlay */
-.grain-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  z-index: 100;
-  opacity: 0.015;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
-}
-
-/* Page transitions */
+/* Page entry fade — single, gentle. */
 .page-transition {
   animation: fadeIn 0.4s ease-out;
 }
@@ -103,40 +77,37 @@
   }
 }
 
-/* Link item animations */
-.link-item {
-  animation: floatIn 0.5s ease-out forwards;
-  opacity: 0;
+/* Gentle bobbing for floating icons. */
+@keyframes bob {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
 }
 
-@keyframes floatIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px) scale(0.9);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-  }
+/* Icon tilt — visible default, amplified on hover. */
+.icon-tilt {
+  transition: transform 320ms ease-out;
+  transform: rotate(var(--tilt, 0deg));
+}
+.icon-bob-wrap:hover .icon-tilt {
+  transform: rotate(calc(var(--tilt, 0deg) * 1.7)) translateY(-5px) scale(1.07);
 }
 
-/* Link number styling */
+/* Die-cut sticker effect for icons — paper-colored halo + deeper drop shadow. */
+.die-cut {
+  filter:
+    drop-shadow(0 0 1.5px #F5EFE0)
+    drop-shadow(0 0 1.5px #F5EFE0)
+    drop-shadow(0 0 1.5px #F5EFE0)
+    drop-shadow(3px 8px 14px rgba(42, 37, 32, 0.42));
+}
+
+/* Link number styling — kept for legend continuity. */
 .link-number {
-  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', system-ui, sans-serif;
   font-weight: 500;
   letter-spacing: 0.05em;
 }
 
-/* Book card hover effect */
-.book-card {
-  @apply transition-all duration-300 ease-out;
-}
-
-.book-card:hover {
-  @apply -translate-y-1;
-}
-
-/* Scrollbar hide utility for mobile heatmap */
+/* Scrollbar hide utility (used in bookshelf heatmap). */
 .scrollbar-hide {
   -ms-overflow-style: none;
   scrollbar-width: none;
@@ -145,7 +116,7 @@
   display: none;
 }
 
-/* Scale 1080px export preview to fit container */
+/* Used by bookmap export — leave alone. */
 .export-preview-wrapper {
   container-type: inline-size;
 }

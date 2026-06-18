@@ -19,8 +19,9 @@ export default {
     },
     extend: {
       fontFamily: {
-        sans: ['-apple-system', 'BlinkMacSystemFont', 'SF Pro Display', 'Segoe UI', 'system-ui', 'sans-serif'],
-        system: ['-apple-system', 'BlinkMacSystemFont', 'SF Pro Display', 'Segoe UI', 'system-ui', 'sans-serif'],
+        sans: ['Monaco', 'Menlo', 'Courier New', 'monospace'],
+        system: ['Monaco', 'Menlo', 'Courier New', 'monospace'],
+        handwritten: ['Chalkduster', 'cursive'],
       },
       colors: {
         border: "hsl(var(--border))",

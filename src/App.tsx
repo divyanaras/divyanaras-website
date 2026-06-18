@@ -7,13 +7,15 @@ import { ThemeProvider } from "next-themes";
 import Index from "./pages/Index";
 import Bookshelf from "./pages/Bookshelf";
 import Work from "./pages/Work";
+import VibecodeD from "./pages/VibecodeD";
+import ClosedRoom from "./pages/ClosedRoom";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
-    <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false}>
+    <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false}>
       <TooltipProvider>
         <Toaster />
         <Sonner />
@@ -22,6 +24,8 @@ const App = () => (
             <Route path="/" element={<Index />} />
             <Route path="/bookshelf" element={<Bookshelf />} />
             <Route path="/work" element={<Work />} />
+            <Route path="/vibecoded" element={<VibecodeD />} />
+            <Route path="/closed-room" element={<ClosedRoom />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>
