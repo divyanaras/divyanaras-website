@@ -1,4 +1,4 @@
-import { useState, useMemo, useRef } from "react";
+import { useState, useMemo, useRef, useEffect } from "react";
 import { GrainOverlay } from "@/components/GrainOverlay";
 import { SideNav } from "@/components/SideNav";
 import { getBooks, type Book, type BookCategory } from "@/data/books";
@@ -100,6 +100,7 @@ type CategoryFilter = "all" | BookCategory;
 // ── Page ────────────────────────────────────────────────────────────────────
 
 const Bookshelf = () => {
+  useEffect(() => { document.title = "digital library — divya narasimhan"; }, []);
   const allBooks = getBooks();
   const [category, setCategory] = useState<CategoryFilter>("all");
   const [authorSearch, setAuthorSearch] = useState("");
@@ -127,7 +128,7 @@ const Bookshelf = () => {
             digital library
           </h1>
           <p className="text-sm text-foreground leading-relaxed max-w-md mb-3">
-            an internet archive of my existing bookshelf. books on scifi, neuroscience, slice of life, magical reality, business, psychology and more. as i'm parting ways with my physical bookshelf, this comes with me wherever i go.
+            an internet archive of my existing bookshelf. books on scifi, neuroscience, slice of life, magical reality, business, psychology and more. as i'm parting ways with my physical bookshelf, this comes with me wherever i go. the books below are the real covers from my shelf.
           </p>
           <p className="text-sm text-foreground leading-relaxed max-w-md mb-10">
             <img src={flowerHighlight} alt="" className="inline-block w-4 h-4 mr-1 align-middle" style={{ transform: "rotate(-15deg)" }} /> books with red stars moved me the most.

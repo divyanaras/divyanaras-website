@@ -22,10 +22,10 @@ const App = () => (
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Index />} />
-            <Route path="/bookshelf" element={<Bookshelf />} />
+            <Route path="/digital-library" element={<Bookshelf />} />
             <Route path="/work" element={<Work />} />
-            <Route path="/vibecoded" element={<VibecodeD />} />
-            <Route path="/closed-room" element={<ClosedRoom />} />
+            <Route path="/vibecoded-projects" element={<VibecodeD />} />
+            <Route path="/closed-room-conversations" element={<ClosedRoom />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>

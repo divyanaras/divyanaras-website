@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { SideNav } from "@/components/SideNav";
 import { GrainOverlay } from "@/components/GrainOverlay";
 
@@ -19,6 +20,7 @@ const sessions = [
 ];
 
 export default function ClosedRoom() {
+  useEffect(() => { document.title = "closed room conversations — divya narasimhan"; }, []);
   return (
     <div className="h-screen overflow-hidden relative">
       <GrainOverlay />

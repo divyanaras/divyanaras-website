@@ -66,7 +66,7 @@ const BookMap = () => {
             Work
           </Link>
           <Link
-            to="/bookshelf"
+            to="/digital-library"
             className="text-lg font-medium text-foreground/80 hover:text-foreground transition-colors"
           >
             Bookshelf

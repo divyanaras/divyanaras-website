@@ -57,7 +57,7 @@ export default function BookDetailPage() {
       <nav className="fixed top-0 left-0 right-0 z-20 px-6 py-4 bg-background/80 backdrop-blur-sm md:bg-transparent md:backdrop-blur-none md:right-auto">
         <div className="flex flex-col gap-2">
           <Link to="/work" className="text-lg font-medium text-foreground/80 hover:text-foreground transition-colors">Work</Link>
-          <Link to="/bookshelf" className="text-lg font-medium text-foreground/80 hover:text-foreground transition-colors">Bookshelf</Link>
+          <Link to="/digital-library" className="text-lg font-medium text-foreground/80 hover:text-foreground transition-colors">Bookshelf</Link>
           <Link to="/bookmap" className="text-lg font-medium text-foreground/80 hover:text-foreground transition-colors">Bookmap</Link>
         </div>
       </nav>

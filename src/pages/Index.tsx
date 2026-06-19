@@ -38,7 +38,7 @@ const Index = () => {
           </p>
           <p className="text-sm md:text-base leading-relaxed">
             I also run{" "}
-            <a href="/closed-room" className="text-primary underline underline-offset-2 decoration-primary hover:opacity-75 transition-opacity">closed room conversations</a>
+            <a href="/closed-room-conversations" className="text-primary underline underline-offset-2 decoration-primary hover:opacity-75 transition-opacity">closed room conversations</a>
             {" "}in Chennai — a community that meets to talk about culture, tech and books.
           </p>
 

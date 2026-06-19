@@ -2,9 +2,9 @@ import { Link, useLocation } from "react-router-dom";
 
 const links = [
   { label: "work", href: "/work" },
-  { label: "library", href: "/bookshelf" },
-  { label: "projects", href: "/vibecoded" },
-  { label: "closed room", href: "/closed-room" },
+  { label: "digital library", href: "/digital-library" },
+  { label: "vibecoded projects", href: "/vibecoded-projects" },
+  { label: "closed room conversations", href: "/closed-room-conversations" },
 ];
 
 export function SideNav() {

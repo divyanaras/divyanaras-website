@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { GrainOverlay } from "@/components/GrainOverlay";
 import { SideNav } from "@/components/SideNav";
 import { motion } from "framer-motion";
@@ -19,16 +20,21 @@ const thingsBuilt = [
   "customer-centric marketing and storytelling",
 ];
 
-const Work = () => (
+const Work = () => {
+  useEffect(() => { document.title = "work — divya narasimhan"; }, []);
+  return (
   <div className="h-screen overflow-hidden relative">
     <GrainOverlay />
     <SideNav />
 
     <div className="ml-40 h-full flex flex-col px-10 py-10 overflow-y-auto">
       <div className="max-w-xl page-transition">
-        <h1 className="text-2xl font-semibold text-foreground mb-6">work</h1>
-        <p className="text-sm text-muted-foreground leading-relaxed mb-10">
-          campaigns, feature pages, product launches and brand storytelling from 3.5 years in enterprise security.
+        <h1 className="font-handwritten text-4xl md:text-5xl tracking-normal leading-none mb-6">work</h1>
+        <p className="text-sm text-foreground leading-relaxed mb-10">
+          campaigns, feature pages, product launches and brand storytelling from 3.5 years in enterprise security. you can find my detailed work items in this{" "}
+          <a href="https://divyanaras.com/resume-2026.pdf" target="_blank" rel="noopener noreferrer" className="underline underline-offset-4 decoration-primary/50 hover:decoration-primary transition-colors">
+            resume
+          </a>.
         </p>
 
         <section className="mb-10">
@@ -59,6 +65,7 @@ const Work = () => (
       </div>
     </div>
   </div>
-);
+  );
+};
 
 export default Work;
