@@ -1,3 +1,4 @@
+import React from "react";
 import { Link } from "react-router-dom";
 
 import iconSubstack from "@/assets/icons/substack.png";
@@ -43,8 +44,54 @@ const nodes: IconNode[] = [
 ];
 
 export function SocialGraph() {
+  const [touched, setTouched] = React.useState<string | null>(null);
   return (
-    <div className="relative w-full h-full">
+    <>
+    {/* ── Mobile: 2-column ordered grid ── */}
+    <div className="md:hidden grid grid-cols-2 gap-x-6 gap-y-8 px-4 pt-2 pb-6">
+      {nodes.map((node) => {
+        const Wrapper = node.kind === "internal" ? Link : "a";
+        const wrapperProps = node.kind === "internal"
+          ? { to: node.href }
+          : { href: node.href, target: "_blank", rel: "noopener noreferrer" };
+        const isActive = touched === node.id;
+        return (
+          <Wrapper
+            key={node.id}
+            {...(wrapperProps as any)}
+            className="flex flex-col items-center gap-1.5 text-center"
+            style={{ animation: `bob ${node.bobDur}s ease-in-out infinite`, animationDelay: `${node.bobDelay}s` }}
+            onMouseEnter={() => setTouched(node.id)}
+            onMouseLeave={() => setTouched(null)}
+            onTouchStart={() => setTouched(node.id)}
+            onTouchEnd={() => setTouched(null)}
+          >
+            <img
+              src={node.image}
+              alt={node.label}
+              draggable={false}
+              className="die-cut"
+              style={{
+                width: 88,
+                height: 88,
+                transform: isActive
+                  ? `rotate(${node.tilt * 1.7}deg) translateY(-5px) scale(1.07)`
+                  : `rotate(${node.tilt}deg)`,
+                transition: "transform 320ms ease-out",
+              }}
+            />
+            {node.desc && (
+              <span className="text-[10px] text-foreground leading-tight text-center" style={{ maxWidth: 110 }}>
+                {node.desc}
+              </span>
+            )}
+          </Wrapper>
+        );
+      })}
+    </div>
+
+    {/* ── Desktop: scattered floating layout — unchanged ── */}
+    <div className="hidden md:block relative w-full h-full">
       {nodes.map((node) => {
         const isInternal = node.kind === "internal";
         const px = node.sizePx ?? ICON_PX;
@@ -103,5 +150,6 @@ export function SocialGraph() {
         );
       })}
     </div>
+    </>
   );
 }

@@ -62,8 +62,21 @@ export default function ClosedRoom() {
             </div>
           </div>
 
-          {/* Scattered photos */}
-          <div className="relative flex-1">
+          {/* Mobile: stacked photos one below the other */}
+          <div className="md:hidden flex flex-col gap-6 pb-8">
+            {photos.map((p, i) => (
+              <div
+                key={i}
+                className="overflow-hidden rounded shadow-md mx-auto"
+                style={{ width: "55%", transform: `rotate(${p.tilt}deg)` }}
+              >
+                <img src={p.src} alt="" draggable={false} className="w-full object-cover" loading="lazy" />
+              </div>
+            ))}
+          </div>
+
+          {/* Desktop: scattered photos — unchanged */}
+          <div className="hidden md:block relative flex-1">
             {photos.map((p, i) => (
               <div
                 key={i}
@@ -78,13 +91,7 @@ export default function ClosedRoom() {
                 onMouseEnter={(e) => (e.currentTarget.style.transform = `rotate(0deg) scale(1.04)`)}
                 onMouseLeave={(e) => (e.currentTarget.style.transform = `rotate(${p.tilt}deg)`)}
               >
-                <img
-                  src={p.src}
-                  alt=""
-                  draggable={false}
-                  className="w-full object-cover"
-                  loading="lazy"
-                />
+                <img src={p.src} alt="" draggable={false} className="w-full object-cover" loading="lazy" />
               </div>
             ))}
           </div>

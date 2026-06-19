@@ -124,3 +124,85 @@
   transform: scale(calc(100cqi / 1080));
   transform-origin: top left;
 }
+
+/* ─────────────────────────────────────────────────────────
+   MOBILE  —  390 x 844  (max-width: 768px)
+   Only additive. Desktop layout untouched.
+───────────────────────────────────────────────────────── */
+@media (max-width: 768px) {
+
+  body { overflow-x: hidden; }
+
+  /* ── Sidebar: desktop nav is hidden via md:hidden in JSX ── */
+
+  /* ── All subpages: remove sidebar margin, add top clearance for mobile bar ── */
+  .ml-40 {
+    margin-left: 0 !important;
+    padding-left: 1.25rem !important;
+    padding-right: 1.25rem !important;
+    padding-top: 5rem !important; /* clears mobile top bar + breathing room */
+  }
+
+  /* ── Pages with fixed height: let them scroll freely ── */
+  .h-screen.overflow-hidden {
+    height: auto !important;
+    overflow: visible !important;
+  }
+  .h-screen.overflow-hidden > div {
+    height: auto !important;
+    overflow: visible !important;
+  }
+
+  /* ── INDEX: outer wrapper ── */
+  div:has(> main.page-transition) {
+    height: auto !important;
+    overflow: visible !important;
+    padding-left: 1.25rem !important;
+    padding-right: 1.25rem !important;
+    padding-top: 3.5rem !important;
+    padding-bottom: 2rem !important;
+  }
+
+  /* ── INDEX: single-column stacked layout ── */
+  main.page-transition {
+    grid-template-columns: 1fr !important;
+    height: auto !important;
+    padding-top: 1.5rem !important;
+    gap: 2rem !important;
+  }
+
+  /* ── INDEX: heading smaller + breathing room ── */
+  main.page-transition h1 {
+    font-size: 2rem !important;
+    line-height: 1.15 !important;
+    margin-bottom: 1.75rem !important;
+  }
+
+  /* ── Mobile tap = hover effect on icons ── */
+  .icon-bob-wrap:active .icon-tilt {
+    transform: rotate(calc(var(--tilt, 0deg) * 1.7)) translateY(-5px) scale(1.07);
+  }
+
+  /* ── INDEX: founder button full width ── */
+  main.page-transition .inline-flex {
+    display: flex !important;
+    width: 100% !important;
+    justify-content: center !important;
+    border-radius: 0.5rem !important;
+  }
+
+  /* ── INDEX: icon section height — auto for the mobile grid ── */
+  main.page-transition > div:last-child {
+    height: auto !important;
+    min-height: unset !important;
+  }
+
+  /* ── CLOSED ROOM: text + photos stacked ── */
+  .h-screen.overflow-hidden .flex.flex-1 {
+    flex-direction: column !important;
+    height: auto !important;
+  }
+  .h-screen.overflow-hidden .w-72 {
+    width: 100% !important;
+  }
+}

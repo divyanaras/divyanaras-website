@@ -14,7 +14,7 @@ export function FounderModal({ open, onOpenChange }: FounderModalProps) {
       <DialogPrimitive.Portal>
         <DialogPrimitive.Overlay className="fixed inset-0 z-50 bg-foreground/60 backdrop-blur-sm data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0" />
         <DialogPrimitive.Content
-          className="fixed left-1/2 top-1/2 z-50 w-[92vw] max-w-[640px] max-h-[88vh] -translate-x-1/2 -translate-y-1/2 overflow-y-auto bg-card text-foreground px-8 py-10 sm:px-12 sm:py-14 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0"
+          className="fixed left-1/2 top-1/2 z-50 w-[94vw] max-w-[640px] max-h-[88vh] -translate-x-1/2 -translate-y-1/2 overflow-y-auto bg-card text-foreground px-6 py-8 sm:px-12 sm:py-14 rounded-lg data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0"
         >
           <DialogPrimitive.Close
             aria-label="Close"
@@ -39,31 +39,37 @@ export function FounderModal({ open, onOpenChange }: FounderModalProps) {
 
           <div className="space-y-5 text-[14px] leading-[1.75] text-foreground">
             <p>
-              hello, here's my story: a product marketer with 3.5 years in cybersecurity, who quit
-              her job at Zoho, to move to SF and to find the founders building the next layer of the
-              internet.
+              hello, here's my story:{" "}
+              <mark style={{ background: "hsl(45 90% 82%)", padding: "1px 4px", borderRadius: 3 }}>
+                product marketer with 3.5 years in cybersecurity
+              </mark>
+              , who quit her job at Zoho, to move to SF and to find the founders building the next layer of the internet.
             </p>
             <p>
               1/ I'm a product + growth person. looking to help founders in the cybersecurity space
-              with GTM positioning, growth, branding, launch videos and demos. that's where my
-              strengths lie but a huge believer of emergence when met with the right teams.
+              with GTM positioning, growth, branding, launch videos and demos. that's where my strengths lie but a huge believer of emergence when met with the right teams.
             </p>
             <p>
               2/ I love translating deep tech for a general audience. That's where my creativity
               actually lives. You can find my work in detail in{" "}
-              <a
-                href="/resume.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="font-semibold text-primary underline underline-offset-4 decoration-primary hover:opacity-75 transition-opacity duration-200"
-              >
-                this resume
-              </a>
+              <mark style={{ background: "hsl(45 90% 82%)", padding: "1px 4px", borderRadius: 3 }}>
+                <a
+                  href="https://divyanaras.com/resume-2026.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-semibold underline underline-offset-4 hover:opacity-75 transition-opacity duration-200"
+                >
+                  this resume
+                </a>
+              </mark>
               .
             </p>
             <p>
-              3/ I'm a US citizen and I'll be in SF next month. If you're building something
-              interesting,{" "}
+              3/{" "}
+              <mark style={{ background: "hsl(45 90% 82%)", padding: "1px 4px", borderRadius: 3 }}>
+                I'm a US citizen and I'll be in SF next month
+              </mark>
+              . If you're building something interesting,{" "}
               <a
                 href={MAILTO_LETS_TALK}
                 className="font-semibold text-primary underline underline-offset-4 decoration-primary hover:opacity-75 transition-opacity duration-200"

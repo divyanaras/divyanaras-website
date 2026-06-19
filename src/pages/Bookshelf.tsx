@@ -174,7 +174,7 @@ const Bookshelf = () => {
           </div>
 
           {/* Grid */}
-          <div className="grid grid-cols-5 md:grid-cols-7 lg:grid-cols-9 gap-3 gap-y-5">
+          <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-7 lg:grid-cols-9 gap-3 gap-y-5">
             {filtered.map((book, i) => (
               <BookCard key={book.title} book={book} index={i} />
             ))}

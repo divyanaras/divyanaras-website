@@ -23,15 +23,15 @@ export default function VibecodeD() {
   useEffect(() => { document.title = "vibecoded projects — divya narasimhan"; }, []);
 
   return (
-    <div className="h-screen overflow-hidden relative">
+    <div className="min-h-screen relative">
       <GrainOverlay />
       <SideNav />
 
-      <div className="ml-40 h-full flex flex-col px-10 py-10">
+      <div className="ml-40 px-10 py-10 overflow-y-auto">
         <div className="page-transition flex flex-col h-full max-w-5xl">
 
           {/* Header */}
-          <div className="mb-8 shrink-0">
+          <div className="mb-16 shrink-0">
             <h1 className="font-handwritten text-4xl md:text-5xl tracking-normal leading-none mb-6">
               vibecoded projects
             </h1>
@@ -41,7 +41,7 @@ export default function VibecodeD() {
           </div>
 
           {/* Projects — side by side */}
-          <div className="grid grid-cols-2 gap-10 flex-1 min-h-0">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-14">
             {projects.map((p) => (
               <div key={p.title} className="flex flex-col min-h-0">
                 {/* Video */}
