@@ -50,8 +50,7 @@ export function FounderModal({ open, onOpenChange }: FounderModalProps) {
               with GTM positioning, growth, branding, launch videos and demos. that's where my strengths lie but a huge believer of emergence when met with the right teams.
             </p>
             <p>
-              2/ I love translating deep tech for a general audience. That's where my creativity
-              actually lives. You can find my work in detail in{" "}
+              2/ I translate deep tech for a general audience and do it with numbers. You can find my work in detail in{" "}
               <mark style={{ background: "hsl(45 90% 82%)", padding: "1px 4px", borderRadius: 3 }}>
                 <a
                   href="https://divyanaras.com/resume-2026.pdf"
@@ -67,7 +66,7 @@ export function FounderModal({ open, onOpenChange }: FounderModalProps) {
             <p>
               3/{" "}
               <mark style={{ background: "hsl(45 90% 82%)", padding: "1px 4px", borderRadius: 3 }}>
-                I'm a US citizen and I'll be in SF next month
+                I'm a US citizen and I'll be in SF from the 25th June
               </mark>
               . If you're building something interesting,{" "}
               <a
@@ -79,6 +78,7 @@ export function FounderModal({ open, onOpenChange }: FounderModalProps) {
               .
             </p>
           </div>
+
         </DialogPrimitive.Content>
       </DialogPrimitive.Portal>
     </DialogPrimitive.Root>

@@ -1,8 +1,42 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { GrainOverlay } from "@/components/GrainOverlay";
 import { SocialGraph } from "@/components/SocialGraph";
 import { FounderCTA } from "@/components/FounderCTA";
 import { FounderModal } from "@/components/FounderModal";
+
+function VisitorClock() {
+  const [time, setTime] = useState("");
+
+  useEffect(() => {
+    let tz = Intl.DateTimeFormat().resolvedOptions().timeZone;
+
+    fetch("https://ipapi.co/json/")
+      .then((r) => r.json())
+      .then((d) => { if (d.timezone) tz = d.timezone; })
+      .catch(() => {})
+      .finally(() => {
+        const fmt = new Intl.DateTimeFormat("en", {
+          hour: "2-digit", minute: "2-digit", second: "2-digit", hour12: true, timeZone: tz,
+        });
+        const tick = () => setTime(fmt.format(new Date()));
+        tick();
+        const id = setInterval(tick, 1000);
+        return () => clearInterval(id);
+      });
+  }, []);
+
+  if (!time) return null;
+  return (
+    <div className="text-right">
+      <p className="text-[10px] text-foreground/50 tracking-wide leading-snug">
+        wherever you are,
+      </p>
+      <p className="text-sm font-medium text-foreground tracking-wide">
+        it's {time}
+      </p>
+    </div>
+  );
+}
 
 const Index = () => {
   const [founderOpen, setFounderOpen] = useState(false);
@@ -10,6 +44,9 @@ const Index = () => {
   return (
     <div className="h-screen overflow-hidden px-6 md:px-12 py-10 relative">
       <GrainOverlay />
+      <div className="absolute top-5 right-6 md:top-8 md:right-10 z-10">
+        <VisitorClock />
+      </div>
 
       <main className="page-transition max-w-6xl mx-auto pt-20 md:pt-24 grid md:grid-cols-[1fr_minmax(520px,620px)] gap-8 md:gap-12 items-start h-[calc(100vh-5rem)]">
         {/* Left column — text */}
