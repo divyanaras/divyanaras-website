@@ -66,7 +66,7 @@ export function FounderModal({ open, onOpenChange }: FounderModalProps) {
             <p>
               3/{" "}
               <mark style={{ background: "hsl(45 90% 82%)", padding: "1px 4px", borderRadius: 3 }}>
-                I'm a US citizen and I'll be in SF from the 25th June
+                I'm a US citizen and I'm in SF
               </mark>
               . If you're building something interesting,{" "}
               <a
