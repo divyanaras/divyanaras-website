@@ -6,14 +6,16 @@ const projects = [
   {
     title: "bookmap",
     tagline: "a reading heatmap for regular readers.",
-    description: "Reading is my favorite activity and I wanted to see my reading commit graphs regularly so that i dont beat myself up about it. An intuitive github-style heatmap for books with library and session logging — visualise your reading and what you liked about it. Built with vanilla JS and a Supabase backend.",
+    description: "GitHub-style commit graph for your reading, so you can see the habit instead of guessing at it.",
+    stack: ["Vanilla JS", "Supabase"],
     youtube: "mJ1f6SDfSrE",
     links: [{ label: "open bookmap", href: "https://divyanaras.github.io/bookmap/" }],
   },
   {
     title: "writerscript",
     tagline: "bloat free, local audio editor for writers.",
-    description: "I voice my substack articles a lot and found no alternative to the bulky heavy audio editors built for sound mixing. so i made my own. Flask-based local editor — upload m4a/mp3 takes, merge them, delete regions on a waveform, remove silences, enhance voice quality, align to script via Whisper, export as MP3. easy.",
+    description: "A local, no-bloat audio editor for voicing articles — trim, merge, and clean up takes without the sound-mixing overhead.",
+    stack: ["Python", "Flask", "Whisper"],
     youtube: "DUJ5A9Z9bac",
     links: [{ label: "if you want to clone this audio editor, here's the github repo", href: "https://github.com/divyanaras/writerscript" }],
   },
@@ -60,6 +62,18 @@ export default function VibecodeD() {
                   {p.title}
                 </h2>
                 <p className="text-xs text-muted-foreground mb-3">{p.tagline}</p>
+
+                <div className="flex flex-wrap gap-1.5 mb-3">
+                  {p.stack.map((s) => (
+                    <span
+                      key={s}
+                      className="text-[10px] uppercase tracking-wide text-muted-foreground border border-border rounded-full px-2 py-0.5"
+                    >
+                      {s}
+                    </span>
+                  ))}
+                </div>
+
                 <p className="text-sm text-foreground leading-relaxed mb-3 line-clamp-4">
                   {p.description}
                 </p>
