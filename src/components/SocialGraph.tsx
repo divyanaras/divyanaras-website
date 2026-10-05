@@ -34,7 +34,7 @@ const TEXT_W = 144;
 
 const nodes: IconNode[] = [
   { id: "substack",  label: "substack",   desc: "writing on culture, AI and cognitive science",     image: iconSubstack,  href: "https://divyapshere.substack.com/archive",            kind: "external", left: "11%", top: "8%",  tilt: -13, bobDur: 4.6, bobDelay: 0,   sizePx: 144 },
-  { id: "linkedin",  label: "linkedin",   desc: "professional work and network",                    image: iconLinkedin,  href: "https://www.linkedin.com/in/profile-divyanarasimhan/", kind: "external", left: "40%", top: "3%",  tilt: 10,  bobDur: 5.2, bobDelay: 0.7, sizePx: 132 },
+  { id: "linkedin",  label: "linkedin",   desc: "professional work and network",                    image: iconLinkedin,  href: "https://www.linkedin.com/in/divyanaras/", kind: "external", left: "40%", top: "3%",  tilt: 10,  bobDur: 5.2, bobDelay: 0.7, sizePx: 132 },
   { id: "work",      label: "work",       desc: "selected work in cybersecurity and growth",        image: iconWork,      href: "/work",                                                kind: "internal", left: "66%", top: "9%",  tilt: -9,  bobDur: 4.0, bobDelay: 1.2, sizePx: 124 },
   { id: "bookshelf", label: "bookshelf",  desc: "digital library",                                  image: iconBookshelf, href: "/digital-library",                                      kind: "internal", left: "24%", top: "38%", tilt: 12,  bobDur: 4.8, bobDelay: 0.3, sizePx: 132 },
   { id: "instagram", label: "instagram",  desc: "videos on AI, culture and the harder questions",  image: iconInstagram, href: "https://www.instagram.com/divsleeps/",                  kind: "external", left: "55%", top: "43%", tilt: -11, bobDur: 5.4, bobDelay: 1.6, sizePx: 144 },
